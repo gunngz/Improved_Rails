@@ -9,10 +9,10 @@
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/gunngz/Improved_Rails"
 	},
 	"license": "MIT",
-	"icon": "assets/rts/icon.png",
+	"icon": "assets/irails/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
