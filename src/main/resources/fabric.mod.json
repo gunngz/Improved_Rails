@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "irails",
+	"version": "${version}",
+	"name": "Improved Rails",
+	"description": "Underwater Rails & Always-Activated Rails",
+	"authors": [
+		"gz"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/rts/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"org.gz.irails.Irails"
+		],
+		"fabric-datagen": [
+			"org.gz.irails.datagen.IrailsDatagen"
+		]
+	},
+	"mixins": [
+		"irails.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.12",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

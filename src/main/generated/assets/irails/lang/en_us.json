@@ -1,0 +1,12 @@
+{
+  "block.irails.activator_rail_with_detector": "Activator Rail with Detector",
+  "block.irails.always_powered_rail": "Always Powered Rail",
+  "block.irails.powered_rail_with_redstone": "Powered Rail with Redstone",
+  "block.irails.underwater_activator_rail": "Underwater Activator Rail",
+  "block.irails.underwater_activator_rail_with_detector": "Underwater Activator Rail with Detector",
+  "block.irails.underwater_always_powered_rail": "Underwater Always Powered Rail",
+  "block.irails.underwater_detector_rail": "Underwater Detector Rail",
+  "block.irails.underwater_powered_rail": "Underwater Powered Rail",
+  "block.irails.underwater_powered_rail_with_redstone": "Underwater Powered Rail with Redstone",
+  "block.irails.underwater_rail": "Underwater Rail"
+}

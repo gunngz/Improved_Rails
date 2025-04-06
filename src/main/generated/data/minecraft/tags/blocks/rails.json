@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "#irails:activator_rails",
+    "#irails:powered_rails",
+    "#irails:underwater_rails"
+  ]
+}

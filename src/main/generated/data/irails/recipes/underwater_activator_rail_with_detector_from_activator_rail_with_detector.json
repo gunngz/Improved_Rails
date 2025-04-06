@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "rails",
+  "ingredients": [
+    {
+      "item": "irails:activator_rail_with_detector"
+    },
+    {
+      "item": "minecraft:prismarine_shard"
+    }
+  ],
+  "result": {
+    "item": "irails:underwater_activator_rail_with_detector"
+  }
+}

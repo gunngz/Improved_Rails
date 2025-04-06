@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "rails",
+  "ingredients": [
+    {
+      "item": "minecraft:powered_rail"
+    },
+    {
+      "item": "minecraft:redstone"
+    }
+  ],
+  "result": {
+    "item": "irails:powered_rail_with_redstone"
+  }
+}

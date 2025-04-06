@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "rails",
+  "key": {
+    "I": {
+      "item": "minecraft:gold_ingot"
+    },
+    "P": {
+      "tag": "c:wood_sticks"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "pattern": [
+    "IRI",
+    "IPI",
+    "IRI"
+  ],
+  "result": {
+    "count": 6,
+    "item": "irails:powered_rail_with_redstone"
+  },
+  "show_notification": true
+}

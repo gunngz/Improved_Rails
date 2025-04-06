@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "rails",
+  "ingredients": [
+    {
+      "item": "minecraft:detector_rail"
+    },
+    {
+      "item": "minecraft:redstone"
+    }
+  ],
+  "result": {
+    "item": "irails:activator_rail_with_detector"
+  }
+}
