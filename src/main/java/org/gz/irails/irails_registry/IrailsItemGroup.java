@@ -18,6 +18,16 @@ public class IrailsItemGroup {
             itemGroup.addAfter(IrailsItems.UNDERWATER_DETECTOR_RAIL, IrailsItems.UNDERWATER_ACTIVATOR_RAIL);
             itemGroup.addAfter(IrailsItems.UNDERWATER_ACTIVATOR_RAIL, IrailsItems.UNDERWATER_POWERED_RAIL_WITH_REDSTONE);
             itemGroup.addAfter(IrailsItems.UNDERWATER_POWERED_RAIL_WITH_REDSTONE, IrailsItems.UNDERWATER_ACTIVATOR_RAIL_WITH_DETECTOR);
+
+            itemGroup.addAfter(IrailsItems.UNDERWATER_ACTIVATOR_RAIL_WITH_DETECTOR, IrailsItems.LIGHT_POWERED_RAIL);
+            itemGroup.addAfter(IrailsItems.LIGHT_POWERED_RAIL, IrailsItems.LIGHT_ALWAYS_POWERED_RAIL);
+            itemGroup.addAfter(IrailsItems.LIGHT_ALWAYS_POWERED_RAIL, IrailsItems.LIGHT_POWERED_RAIL_WITH_REDSTONE);
+            itemGroup.addAfter(IrailsItems.LIGHT_POWERED_RAIL_WITH_REDSTONE, IrailsItems.LIGHT_UNDERWATER_POWERED_RAIL);
+            itemGroup.addAfter(IrailsItems.LIGHT_UNDERWATER_POWERED_RAIL, IrailsItems.LIGHT_UNDERWATER_ALWAYS_POWERED_RAIL);
+            itemGroup.addAfter(IrailsItems.LIGHT_UNDERWATER_ALWAYS_POWERED_RAIL, IrailsItems.LIGHT_UNDERWATER_POWERED_RAIL_WITH_REDSTONE);
+
+            itemGroup.addAfter(IrailsItems.LIGHT_UNDERWATER_POWERED_RAIL_WITH_REDSTONE, IrailsItems.UNDERWATER_WAND);
+            itemGroup.addAfter(IrailsItems.UNDERWATER_WAND, IrailsItems.LIGHT_WAND);
         });
     }
 }

@@ -1,4 +1,4 @@
-package org.gz.irails.irails_registry.irails_blocks;
+package org.gz.irails.irails_registry.irails_customs;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;

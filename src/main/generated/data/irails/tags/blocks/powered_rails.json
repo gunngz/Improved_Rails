@@ -20,6 +20,30 @@
     {
       "id": "irails:underwater_always_powered_rail",
       "required": false
+    },
+    {
+      "id": "irails:light_powered_rail",
+      "required": false
+    },
+    {
+      "id": "irails:light_always_powered_rail",
+      "required": false
+    },
+    {
+      "id": "irails:light_underwater_powered_rail",
+      "required": false
+    },
+    {
+      "id": "irails:light_underwater_always_powered_rail",
+      "required": false
+    },
+    {
+      "id": "irails:light_underwater_powered_rail_with_redstone",
+      "required": false
+    },
+    {
+      "id": "irails:light_powered_rail_with_redstone",
+      "required": false
     }
   ]
 }

@@ -28,6 +28,18 @@
     {
       "id": "irails:underwater_activator_rail_with_detector",
       "required": false
+    },
+    {
+      "id": "irails:light_underwater_powered_rail",
+      "required": false
+    },
+    {
+      "id": "irails:light_underwater_always_powered_rail",
+      "required": false
+    },
+    {
+      "id": "irails:light_underwater_powered_rail_with_redstone",
+      "required": false
     }
   ]
 }

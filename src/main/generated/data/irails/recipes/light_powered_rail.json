@@ -1,29 +1,29 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "redstone",
+  "category": "misc",
   "group": "rails",
   "key": {
+    "C": {
+      "tag": "minecraft:coals"
+    },
     "I": {
       "item": "minecraft:gold_ingot"
-    },
-    "K": {
-      "item": "minecraft:redstone"
     },
     "P": {
       "tag": "c:wood_sticks"
     },
     "R": {
-      "item": "minecraft:prismarine_shard"
+      "item": "minecraft:redstone"
     }
   },
   "pattern": [
-    "IRI",
+    "ICI",
     "IPI",
-    "IKI"
+    "IRI"
   ],
   "result": {
     "count": 6,
-    "item": "irails:underwater_always_powered_rail"
+    "item": "irails:light_powered_rail"
   },
   "show_notification": true
 }

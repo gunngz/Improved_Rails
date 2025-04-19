@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "irails:block/light_powered_rail_with_redstone"
+  }
+}

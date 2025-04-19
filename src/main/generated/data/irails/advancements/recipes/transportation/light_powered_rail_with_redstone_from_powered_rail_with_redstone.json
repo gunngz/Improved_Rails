@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_prismarine_shard": {
+    "has_powered_rail_with_redstone": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:prismarine_shard"
+              "irails:powered_rail_with_redstone"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:underwater_always_powered_rail"
+        "recipe": "minecraft:light_powered_rail_with_redstone_from_powered_rail_with_redstone"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_prismarine_shard",
+      "has_powered_rail_with_redstone",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:underwater_always_powered_rail"
+      "minecraft:light_powered_rail_with_redstone_from_powered_rail_with_redstone"
     ]
   },
   "sends_telemetry_event": false
