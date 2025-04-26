@@ -2,7 +2,7 @@ package org.gz.irails.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
-import net.minecraft.data.server.recipe.RecipeJsonProvider;
+import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.Item;
@@ -13,22 +13,20 @@ import net.minecraft.registry.tag.TagKey;
 import org.gz.irails.irails_registry.IrailsItems;
 import org.gz.irails.irails_registry.IrailsTags;
 
-import java.util.function.Consumer;
-
 public class IrailsRecipeProvider extends FabricRecipeProvider {
     public IrailsRecipeProvider(FabricDataOutput output) {
         super(output);
     }
 
     @Override
-    public void generate(Consumer<RecipeJsonProvider> exporter) {
+    public void generate(RecipeExporter exporter) {
         offerRegularRails(exporter);
         offerUnderwaterRails(exporter);
         offerLightRails(exporter);
         offerWands(exporter);
     }
 
-    private void offerWands(Consumer<RecipeJsonProvider> exporter) {
+    private void offerWands(RecipeExporter exporter) {
         ShapedRecipeJsonBuilder.create(RecipeCategory.TRANSPORTATION, IrailsItems.LIGHT_WAND)
                 .input('C', Items.COAL_BLOCK)
                 .input('P', IrailsTags.WOOD_STICKS)
@@ -50,7 +48,7 @@ public class IrailsRecipeProvider extends FabricRecipeProvider {
                 .offerTo(exporter, "underwater_wand");
     }
 
-    private void offerLightRails(Consumer<RecipeJsonProvider> exporter) {
+    private void offerLightRails(RecipeExporter exporter) {
         offerAddCoal(exporter, Items.POWERED_RAIL, IrailsItems.LIGHT_POWERED_RAIL);
         ShapedRecipeJsonBuilder.create(RecipeCategory.TRANSPORTATION, IrailsItems.LIGHT_POWERED_RAIL, 6)
                 .input('I', Items.GOLD_INGOT)
@@ -77,7 +75,7 @@ public class IrailsRecipeProvider extends FabricRecipeProvider {
         offerAddCoal(exporter, IrailsItems.POWERED_RAIL_WITH_REDSTONE, IrailsItems.LIGHT_POWERED_RAIL_WITH_REDSTONE);
     }
 
-    private static void offerUnderwaterRails(Consumer<RecipeJsonProvider> exporter) {
+    private static void offerUnderwaterRails(RecipeExporter exporter) {
         offerAddPrismarine(exporter, Items.RAIL, IrailsItems.UNDERWATER_RAIL);
         ShapedRecipeJsonBuilder.create(RecipeCategory.TRANSPORTATION, IrailsItems.UNDERWATER_RAIL, 6)
                 .input('I', Items.IRON_INGOT)
@@ -137,7 +135,7 @@ public class IrailsRecipeProvider extends FabricRecipeProvider {
         offerAddPrismarine(exporter, IrailsItems.ACTIVATOR_RAIL_WITH_DETECTOR, IrailsItems.UNDERWATER_ACTIVATOR_RAIL_WITH_DETECTOR);
     }
 
-    private static void offerRegularRails(Consumer<RecipeJsonProvider> exporter) {
+    private static void offerRegularRails(RecipeExporter exporter) {
         offerRailsConvertion(exporter, Items.POWERED_RAIL, IrailsItems.ALWAYS_POWERED_RAIL);
         offerRailsConvertion(exporter, IrailsItems.ALWAYS_POWERED_RAIL, Items.POWERED_RAIL);
 
@@ -167,36 +165,36 @@ public class IrailsRecipeProvider extends FabricRecipeProvider {
                 .offerTo(exporter, "activator_rail_with_detector");
     }
 
-    private static void offerAddCoal(Consumer<RecipeJsonProvider> exporter, Item in, Item out) {
+    private static void offerAddCoal(RecipeExporter exporter, Item in, Item out) {
         offerAddOneItem(ShapelessRecipeJsonBuilder.create(RecipeCategory.TRANSPORTATION, out, 1)
                 .input(in), ItemTags.COALS, in, exporter, out);
     }
 
-    private static void offerAddRedstone(Consumer<RecipeJsonProvider> exporter, Item in, Item out) {
+    private static void offerAddRedstone(RecipeExporter exporter, Item in, Item out) {
         offerAddOneItem(ShapelessRecipeJsonBuilder.create(RecipeCategory.TRANSPORTATION, out, 1)
                 .input(in), Items.REDSTONE, in, exporter, out);
     }
 
-    private static void offerAddOneItem(ShapelessRecipeJsonBuilder Builder, Item in1, Item in2, Consumer<RecipeJsonProvider> exporter, Item out) {
+    private static void offerAddOneItem(ShapelessRecipeJsonBuilder Builder, Item in1, Item in2, RecipeExporter exporter, Item out) {
         Builder.input(in1)
                 .group("rails")
                 .criterion(hasItem(in2), conditionsFromItem(in2))
                 .offerTo(exporter, convertBetween(out, in2));
     }
 
-    private static void offerAddOneItem(ShapelessRecipeJsonBuilder Builder, TagKey<Item> in1, Item in2, Consumer<RecipeJsonProvider> exporter, Item out) {
+    private static void offerAddOneItem(ShapelessRecipeJsonBuilder Builder, TagKey<Item> in1, Item in2, RecipeExporter exporter, Item out) {
         Builder.input(in1)
                 .group("rails")
                 .criterion(hasItem(in2), conditionsFromItem(in2))
                 .offerTo(exporter, convertBetween(out, in2));
     }
 
-    private static void offerAddPrismarine(Consumer<RecipeJsonProvider> exporter, Item in, Item out) {
+    private static void offerAddPrismarine(RecipeExporter exporter, Item in, Item out) {
         offerAddOneItem(ShapelessRecipeJsonBuilder.create(RecipeCategory.TRANSPORTATION, out, 1)
                 .input(in), Items.PRISMARINE_SHARD, in, exporter, out);
     }
 
-    private static void offerRailsConvertion(Consumer<RecipeJsonProvider> exporter, Item out, Item in) {
+    private static void offerRailsConvertion(RecipeExporter exporter, Item out, Item in) {
         offerAddOneItem(ShapelessRecipeJsonBuilder.create(RecipeCategory.TRANSPORTATION, out, 1), in, in, exporter, out);
     }
 }

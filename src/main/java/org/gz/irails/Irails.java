@@ -2,7 +2,6 @@ package org.gz.irails;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.ModInitializer;
-
 import net.fabricmc.loader.api.FabricLoader;
 import org.gz.irails.irails_registry.IrailsBlocks;
 import org.gz.irails.irails_registry.IrailsItemGroup;

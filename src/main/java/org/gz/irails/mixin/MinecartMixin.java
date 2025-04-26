@@ -6,10 +6,8 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.vehicle.AbstractMinecartEntity;
 import net.minecraft.util.math.BlockPos;
-import org.gz.irails.Irails;
 import org.gz.irails.irails_registry.IrailsTags;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 
 import static net.minecraft.util.math.MathHelper.floor;
