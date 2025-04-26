@@ -3,9 +3,8 @@ package org.gz.irails.irails_registry;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.minecraft.block.*;
 import net.minecraft.client.render.RenderLayer;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 import org.gz.irails.Irails;
 import org.gz.irails.irails_registry.irails_customs.AlwaysPoweredRail;
 import org.gz.irails.irails_registry.irails_customs.PoweredRailWithRedstone;
@@ -36,7 +35,7 @@ public class IrailsBlocks {
 
 
     private static Block register(String name, Function<AbstractBlock.Settings, Block> blockFactory, AbstractBlock.Settings settings) {
-        return Registry.register(Registries.BLOCK, Identifier.of(Irails.MOD_ID, name), blockFactory.apply(settings));
+        return Registry.register(Registry.BLOCK, new Identifier(Irails.MOD_ID, name), blockFactory.apply(settings));
     }
 
     private static Block cutout(Block block) {

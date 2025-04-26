@@ -1,25 +1,26 @@
 package org.gz.irails.datagen;
 
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.block.Block;
-import net.minecraft.data.server.tag.TagProvider;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.tag.BlockTags;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
+import org.gz.irails.Irails;
 import org.gz.irails.irails_registry.IrailsBlocks;
 import org.gz.irails.irails_registry.IrailsTags;
 
-import java.util.concurrent.CompletableFuture;
+public class IrailsBlockTagProvider extends FabricTagProvider<Block> {
+    protected IrailsBlockTagProvider(FabricDataGenerator dataGenerator) {
+        super(dataGenerator, Registry.BLOCK, Irails.MOD_ID);
+    }
 
-public class IrailsBlockTagProvider extends TagProvider<Block> {
-    public IrailsBlockTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> lookupFuture) {
-        super(output, RegistryKeys.BLOCK, lookupFuture);
+    protected Identifier getBlockId(Block block) {
+        return Registry.BLOCK.getId(block);
     }
 
     @Override
-    protected void configure(RegistryWrapper.WrapperLookup lookup) {
+    protected void generateTags() {
         getOrCreateTagBuilder(IrailsTags.POWERED_RAILS)
                 .addOptional(getBlockId(IrailsBlocks.ALWAYS_POWERED_RAIL))
                 .addOptional(getBlockId(IrailsBlocks.POWERED_RAIL_WITH_REDSTONE))
@@ -55,9 +56,5 @@ public class IrailsBlockTagProvider extends TagProvider<Block> {
                 .addTag(IrailsTags.ACTIVATOR_RAILS)
                 .addTag(IrailsTags.POWERED_RAILS)
                 .addTag(IrailsTags.UNDERWATER_RAILS);
-    }
-
-    protected Identifier getBlockId(Block block) {
-        return Registries.BLOCK.getId(block);
     }
 }

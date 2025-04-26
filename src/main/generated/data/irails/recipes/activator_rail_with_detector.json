@@ -1,7 +1,11 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "group": "rails",
+  "pattern": [
+    "IRI",
+    "IPI",
+    "IRI"
+  ],
   "key": {
     "I": {
       "item": "minecraft:iron_ingot"
@@ -13,14 +17,8 @@
       "item": "minecraft:redstone"
     }
   },
-  "pattern": [
-    "IRI",
-    "IPI",
-    "IRI"
-  ],
   "result": {
-    "count": 6,
-    "item": "irails:activator_rail_with_detector"
-  },
-  "show_notification": true
+    "item": "irails:activator_rail_with_detector",
+    "count": 6
+  }
 }

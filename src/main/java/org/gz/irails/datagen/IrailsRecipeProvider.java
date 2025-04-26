@@ -1,33 +1,34 @@
 package org.gz.irails.datagen;
 
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
-import net.minecraft.data.server.recipe.RecipeExporter;
+import net.minecraft.data.server.recipe.RecipeJsonProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
-import net.minecraft.recipe.book.RecipeCategory;
-import net.minecraft.registry.tag.ItemTags;
-import net.minecraft.registry.tag.TagKey;
+import net.minecraft.tag.ItemTags;
+import net.minecraft.tag.TagKey;
 import org.gz.irails.irails_registry.IrailsItems;
 import org.gz.irails.irails_registry.IrailsTags;
 
+import java.util.function.Consumer;
+
 public class IrailsRecipeProvider extends FabricRecipeProvider {
-    public IrailsRecipeProvider(FabricDataOutput output) {
-        super(output);
+    public IrailsRecipeProvider(FabricDataGenerator dataGenerator) {
+        super(dataGenerator);
     }
 
     @Override
-    public void generate(RecipeExporter exporter) {
+    public void generateRecipes(Consumer<RecipeJsonProvider> exporter) {
         offerRegularRails(exporter);
         offerUnderwaterRails(exporter);
         offerLightRails(exporter);
         offerWands(exporter);
     }
 
-    private void offerWands(RecipeExporter exporter) {
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TRANSPORTATION, IrailsItems.LIGHT_WAND)
+    private void offerWands(Consumer<RecipeJsonProvider> exporter) {
+        ShapedRecipeJsonBuilder.create(IrailsItems.LIGHT_WAND)
                 .input('C', Items.COAL_BLOCK)
                 .input('P', IrailsTags.WOOD_STICKS)
                 .pattern("  C")
@@ -37,7 +38,7 @@ public class IrailsRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.COAL_BLOCK), conditionsFromItem(Items.COAL_BLOCK))
                 .offerTo(exporter, "light_wand");
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TRANSPORTATION, IrailsItems.UNDERWATER_WAND)
+        ShapedRecipeJsonBuilder.create(IrailsItems.UNDERWATER_WAND)
                 .input('C', Items.PRISMARINE_BRICKS)
                 .input('P', IrailsTags.WOOD_STICKS)
                 .pattern("  C")
@@ -48,9 +49,9 @@ public class IrailsRecipeProvider extends FabricRecipeProvider {
                 .offerTo(exporter, "underwater_wand");
     }
 
-    private void offerLightRails(RecipeExporter exporter) {
+    private void offerLightRails(Consumer<RecipeJsonProvider> exporter) {
         offerAddCoal(exporter, Items.POWERED_RAIL, IrailsItems.LIGHT_POWERED_RAIL);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TRANSPORTATION, IrailsItems.LIGHT_POWERED_RAIL, 6)
+        ShapedRecipeJsonBuilder.create(IrailsItems.LIGHT_POWERED_RAIL, 6)
                 .input('I', Items.GOLD_INGOT)
                 .input('P', IrailsTags.WOOD_STICKS)
                 .input('R', Items.REDSTONE)
@@ -75,9 +76,9 @@ public class IrailsRecipeProvider extends FabricRecipeProvider {
         offerAddCoal(exporter, IrailsItems.POWERED_RAIL_WITH_REDSTONE, IrailsItems.LIGHT_POWERED_RAIL_WITH_REDSTONE);
     }
 
-    private static void offerUnderwaterRails(RecipeExporter exporter) {
+    private static void offerUnderwaterRails(Consumer<RecipeJsonProvider> exporter) {
         offerAddPrismarine(exporter, Items.RAIL, IrailsItems.UNDERWATER_RAIL);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TRANSPORTATION, IrailsItems.UNDERWATER_RAIL, 6)
+        ShapedRecipeJsonBuilder.create(IrailsItems.UNDERWATER_RAIL, 6)
                 .input('I', Items.IRON_INGOT)
                 .input('P', IrailsTags.WOOD_STICKS)
                 .input('R', Items.PRISMARINE_SHARD)
@@ -89,7 +90,7 @@ public class IrailsRecipeProvider extends FabricRecipeProvider {
                 .offerTo(exporter, "underwater_rail");
 
         offerAddPrismarine(exporter, Items.POWERED_RAIL, IrailsItems.UNDERWATER_POWERED_RAIL);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TRANSPORTATION, IrailsItems.UNDERWATER_POWERED_RAIL, 6)
+        ShapedRecipeJsonBuilder.create(IrailsItems.UNDERWATER_POWERED_RAIL, 6)
                 .input('I', Items.GOLD_INGOT)
                 .input('P', IrailsTags.WOOD_STICKS)
                 .input('R', Items.PRISMARINE_SHARD)
@@ -102,7 +103,7 @@ public class IrailsRecipeProvider extends FabricRecipeProvider {
                 .offerTo(exporter, "underwater_powered_rail");
 
         offerAddPrismarine(exporter, Items.DETECTOR_RAIL, IrailsItems.UNDERWATER_DETECTOR_RAIL);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TRANSPORTATION, IrailsItems.UNDERWATER_DETECTOR_RAIL, 6)
+        ShapedRecipeJsonBuilder.create(IrailsItems.UNDERWATER_DETECTOR_RAIL, 6)
                 .input('I', Items.IRON_INGOT)
                 .input('P', Items.STONE_PRESSURE_PLATE)
                 .input('R', Items.PRISMARINE_SHARD)
@@ -115,7 +116,7 @@ public class IrailsRecipeProvider extends FabricRecipeProvider {
                 .offerTo(exporter, "underwater_detector_rail");
 
         offerAddPrismarine(exporter, Items.ACTIVATOR_RAIL, IrailsItems.UNDERWATER_ACTIVATOR_RAIL);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TRANSPORTATION, IrailsItems.UNDERWATER_ACTIVATOR_RAIL, 6)
+        ShapedRecipeJsonBuilder.create(IrailsItems.UNDERWATER_ACTIVATOR_RAIL, 6)
                 .input('I', Items.IRON_INGOT)
                 .input('T', Items.REDSTONE_TORCH)
                 .input('R', Items.PRISMARINE_SHARD)
@@ -135,13 +136,13 @@ public class IrailsRecipeProvider extends FabricRecipeProvider {
         offerAddPrismarine(exporter, IrailsItems.ACTIVATOR_RAIL_WITH_DETECTOR, IrailsItems.UNDERWATER_ACTIVATOR_RAIL_WITH_DETECTOR);
     }
 
-    private static void offerRegularRails(RecipeExporter exporter) {
+    private static void offerRegularRails(Consumer<RecipeJsonProvider> exporter) {
         offerRailsConvertion(exporter, Items.POWERED_RAIL, IrailsItems.ALWAYS_POWERED_RAIL);
         offerRailsConvertion(exporter, IrailsItems.ALWAYS_POWERED_RAIL, Items.POWERED_RAIL);
 
         offerAddRedstone(exporter, IrailsItems.ALWAYS_POWERED_RAIL, IrailsItems.POWERED_RAIL_WITH_REDSTONE);
         offerAddRedstone(exporter, Items.POWERED_RAIL, IrailsItems.POWERED_RAIL_WITH_REDSTONE);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TRANSPORTATION, IrailsItems.POWERED_RAIL_WITH_REDSTONE, 6)
+        ShapedRecipeJsonBuilder.create(IrailsItems.POWERED_RAIL_WITH_REDSTONE, 6)
                 .input('I', Items.GOLD_INGOT)
                 .input('P', IrailsTags.WOOD_STICKS)
                 .input('R', Items.REDSTONE)
@@ -153,7 +154,7 @@ public class IrailsRecipeProvider extends FabricRecipeProvider {
                 .offerTo(exporter, "powered_rail_with_redstone");
 
         offerAddRedstone(exporter, Items.DETECTOR_RAIL, IrailsItems.ACTIVATOR_RAIL_WITH_DETECTOR);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TRANSPORTATION, IrailsItems.ACTIVATOR_RAIL_WITH_DETECTOR, 6)
+        ShapedRecipeJsonBuilder.create(IrailsItems.ACTIVATOR_RAIL_WITH_DETECTOR, 6)
                 .input('I', Items.IRON_INGOT)
                 .input('P', Items.STONE_PRESSURE_PLATE)
                 .input('R', Items.REDSTONE)
@@ -165,36 +166,36 @@ public class IrailsRecipeProvider extends FabricRecipeProvider {
                 .offerTo(exporter, "activator_rail_with_detector");
     }
 
-    private static void offerAddCoal(RecipeExporter exporter, Item in, Item out) {
-        offerAddOneItem(ShapelessRecipeJsonBuilder.create(RecipeCategory.TRANSPORTATION, out, 1)
+    private static void offerAddCoal(Consumer<RecipeJsonProvider> exporter, Item in, Item out) {
+        offerAddOneItem(ShapelessRecipeJsonBuilder.create(out, 1)
                 .input(in), ItemTags.COALS, in, exporter, out);
     }
 
-    private static void offerAddRedstone(RecipeExporter exporter, Item in, Item out) {
-        offerAddOneItem(ShapelessRecipeJsonBuilder.create(RecipeCategory.TRANSPORTATION, out, 1)
+    private static void offerAddRedstone(Consumer<RecipeJsonProvider> exporter, Item in, Item out) {
+        offerAddOneItem(ShapelessRecipeJsonBuilder.create(out, 1)
                 .input(in), Items.REDSTONE, in, exporter, out);
     }
 
-    private static void offerAddOneItem(ShapelessRecipeJsonBuilder Builder, Item in1, Item in2, RecipeExporter exporter, Item out) {
+    private static void offerAddOneItem(ShapelessRecipeJsonBuilder Builder, Item in1, Item in2, Consumer<RecipeJsonProvider> exporter, Item out) {
         Builder.input(in1)
                 .group("rails")
                 .criterion(hasItem(in2), conditionsFromItem(in2))
                 .offerTo(exporter, convertBetween(out, in2));
     }
 
-    private static void offerAddOneItem(ShapelessRecipeJsonBuilder Builder, TagKey<Item> in1, Item in2, RecipeExporter exporter, Item out) {
+    private static void offerAddOneItem(ShapelessRecipeJsonBuilder Builder, TagKey<Item> in1, Item in2, Consumer<RecipeJsonProvider> exporter, Item out) {
         Builder.input(in1)
                 .group("rails")
                 .criterion(hasItem(in2), conditionsFromItem(in2))
                 .offerTo(exporter, convertBetween(out, in2));
     }
 
-    private static void offerAddPrismarine(RecipeExporter exporter, Item in, Item out) {
-        offerAddOneItem(ShapelessRecipeJsonBuilder.create(RecipeCategory.TRANSPORTATION, out, 1)
+    private static void offerAddPrismarine(Consumer<RecipeJsonProvider> exporter, Item in, Item out) {
+        offerAddOneItem(ShapelessRecipeJsonBuilder.create(out, 1)
                 .input(in), Items.PRISMARINE_SHARD, in, exporter, out);
     }
 
-    private static void offerRailsConvertion(RecipeExporter exporter, Item out, Item in) {
-        offerAddOneItem(ShapelessRecipeJsonBuilder.create(RecipeCategory.TRANSPORTATION, out, 1), in, in, exporter, out);
+    private static void offerRailsConvertion(Consumer<RecipeJsonProvider> exporter, Item out, Item in) {
+        offerAddOneItem(ShapelessRecipeJsonBuilder.create(out, 1), in, in, exporter, out);
     }
 }

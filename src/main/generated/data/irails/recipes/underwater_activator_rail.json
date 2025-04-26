@@ -1,29 +1,27 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "group": "rails",
-  "key": {
-    "I": {
-      "item": "minecraft:iron_ingot"
-    },
-    "R": {
-      "item": "minecraft:prismarine_shard"
-    },
-    "T": {
-      "item": "minecraft:redstone_torch"
-    },
-    "W": {
-      "tag": "c:wood_sticks"
-    }
-  },
   "pattern": [
     "IRI",
     "ITI",
     "IWI"
   ],
-  "result": {
-    "count": 6,
-    "item": "irails:underwater_activator_rail"
+  "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "T": {
+      "item": "minecraft:redstone_torch"
+    },
+    "R": {
+      "item": "minecraft:prismarine_shard"
+    },
+    "W": {
+      "tag": "c:wood_sticks"
+    }
   },
-  "show_notification": true
+  "result": {
+    "item": "irails:underwater_activator_rail",
+    "count": 6
+  }
 }

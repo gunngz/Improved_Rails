@@ -1,11 +1,12 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "group": "rails",
+  "pattern": [
+    "ICI",
+    "IPI",
+    "IRI"
+  ],
   "key": {
-    "C": {
-      "tag": "minecraft:coals"
-    },
     "I": {
       "item": "minecraft:gold_ingot"
     },
@@ -14,16 +15,13 @@
     },
     "R": {
       "item": "minecraft:redstone"
+    },
+    "C": {
+      "tag": "minecraft:coals"
     }
   },
-  "pattern": [
-    "ICI",
-    "IPI",
-    "IRI"
-  ],
   "result": {
-    "count": 6,
-    "item": "irails:light_powered_rail"
-  },
-  "show_notification": true
+    "item": "irails:light_powered_rail",
+    "count": 6
+  }
 }

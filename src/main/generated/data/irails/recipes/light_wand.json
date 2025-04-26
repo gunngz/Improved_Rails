@@ -1,7 +1,11 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "group": "wand",
+  "pattern": [
+    "  C",
+    " P ",
+    "P  "
+  ],
   "key": {
     "C": {
       "item": "minecraft:coal_block"
@@ -10,13 +14,7 @@
       "tag": "c:wood_sticks"
     }
   },
-  "pattern": [
-    "  C",
-    " P ",
-    "P  "
-  ],
   "result": {
     "item": "irails:light_wand"
-  },
-  "show_notification": true
+  }
 }

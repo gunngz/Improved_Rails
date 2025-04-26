@@ -1,7 +1,11 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "group": "rails",
+  "pattern": [
+    "I I",
+    "IPI",
+    "IRI"
+  ],
   "key": {
     "I": {
       "item": "minecraft:iron_ingot"
@@ -13,14 +17,8 @@
       "item": "minecraft:prismarine_shard"
     }
   },
-  "pattern": [
-    "I I",
-    "IPI",
-    "IRI"
-  ],
   "result": {
-    "count": 6,
-    "item": "irails:underwater_rail"
-  },
-  "show_notification": true
+    "item": "irails:underwater_rail",
+    "count": 6
+  }
 }

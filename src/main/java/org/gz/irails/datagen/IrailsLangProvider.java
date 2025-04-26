@@ -1,13 +1,13 @@
 package org.gz.irails.datagen;
 
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import org.gz.irails.irails_registry.IrailsBlocks;
 import org.gz.irails.irails_registry.IrailsItems;
 
 public class IrailsLangProvider extends FabricLanguageProvider {
-    protected IrailsLangProvider(FabricDataOutput dataOutput) {
-        super(dataOutput);
+    protected IrailsLangProvider(FabricDataGenerator dataGenerator) {
+        super(dataGenerator);
     }
 
     @Override

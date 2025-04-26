@@ -8,8 +8,9 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
-import net.minecraft.registry.tag.ItemTags;
+import net.minecraft.tag.ItemTags;
 import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.math.BlockPos;
@@ -53,7 +54,7 @@ public class LightWand extends Item {
         PlayerInventory inv = Objects.requireNonNull(player).getInventory();
 
         if (newBlock == null) {
-            player.sendMessage(Text.translatable("text.irails.light_wand.no_corresponding_underwater_rail"), true);
+            player.sendMessage(new TranslatableText("text.irails.light_wand.no_corresponding_underwater_rail"), true);
             return ActionResult.PASS;
         }
 
@@ -71,13 +72,13 @@ public class LightWand extends Item {
             }
         }
 
-        player.sendMessage(Text.translatable("text.irails.light_wand.no_coal"), true);
+        player.sendMessage(new TranslatableText("text.irails.light_wand.no_coal"), true);
         return ActionResult.FAIL;
     }
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        tooltip.add(Text.translatable("text.irails.light_wand.tooltip1").formatted(Formatting.GRAY));
-        tooltip.add(Text.translatable("text.irails.light_wand.tooltip2").formatted(Formatting.GRAY));
+        tooltip.add(new TranslatableText("text.irails.light_wand.tooltip1").formatted(Formatting.GRAY));
+        tooltip.add(new TranslatableText("text.irails.light_wand.tooltip2").formatted(Formatting.GRAY));
     }
 }

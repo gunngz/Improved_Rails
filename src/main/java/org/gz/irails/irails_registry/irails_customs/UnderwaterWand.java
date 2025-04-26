@@ -10,6 +10,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
 import net.minecraft.item.Items;
 import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.math.BlockPos;
@@ -59,7 +60,7 @@ public class UnderwaterWand extends Item {
         PlayerInventory inv = Objects.requireNonNull(player).getInventory();
 
         if (newBlock == null) {
-            player.sendMessage(Text.translatable("text.irails.underwater_wand.no_corresponding_underwater_rail"), true);
+            player.sendMessage(new TranslatableText("text.irails.underwater_wand.no_corresponding_underwater_rail"), true);
             return ActionResult.PASS;
         }
 
@@ -77,13 +78,13 @@ public class UnderwaterWand extends Item {
             }
         }
 
-        player.sendMessage(Text.translatable("text.irails.underwater_wand.no_prismarine_shard"), true);
+        player.sendMessage(new TranslatableText("text.irails.underwater_wand.no_prismarine_shard"), true);
         return ActionResult.FAIL;
     }
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        tooltip.add(Text.translatable("text.irails.underwater_wand.tooltip1").formatted(Formatting.GRAY));
-        tooltip.add(Text.translatable("text.irails.underwater_wand.tooltip2").formatted(Formatting.GRAY));
+        tooltip.add(new TranslatableText("text.irails.underwater_wand.tooltip1").formatted(Formatting.GRAY));
+        tooltip.add(new TranslatableText("text.irails.underwater_wand.tooltip2").formatted(Formatting.GRAY));
     }
 }
