@@ -6,10 +6,9 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.vehicle.AbstractMinecartEntity;
 import net.minecraft.util.math.BlockPos;
-import org.gz.irails.Irails;
 import org.gz.irails.irails_registry.IrailsTags;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 
 import static net.minecraft.util.math.MathHelper.floor;
@@ -38,6 +37,7 @@ public class MinecartMixin {
         return original.call(state, block) || state.isIn(IrailsTags.ACTIVATOR_RAILS);
     }
 
+    @Unique
     private static BlockState getState(double x, double y, double z, AbstractMinecartEntity instance) {
         BlockPos pos = new BlockPos(floor(x), floor(y), floor(z));
         return instance.getWorld().getBlockState(pos);

@@ -11,6 +11,8 @@ public class IrailsTags {
     public static final TagKey<Block> POWERED_RAILS = TagKey.of(RegistryKeys.BLOCK, new Identifier(Irails.MOD_ID, "powered_rails"));
     public static final TagKey<Block> ACTIVATOR_RAILS = TagKey.of(RegistryKeys.BLOCK, new Identifier(Irails.MOD_ID, "activator_rails"));
     public static final TagKey<Block> UNDERWATER_RAILS = TagKey.of(RegistryKeys.BLOCK, new Identifier(Irails.MOD_ID, "underwater_rails"));
+    public static final TagKey<Block> POWERED_TURNABLE_RAILS = TagKey.of(RegistryKeys.BLOCK, new Identifier(Irails.MOD_ID, "powered_turnable_rails"));
+    public static final TagKey<Block> ALWAYS_POWERED_RAILS = TagKey.of(RegistryKeys.BLOCK, new Identifier(Irails.MOD_ID, "always_powered_turnable_rails"));
 
     public static final TagKey<Item> WOOD_STICKS = TagKey.of(RegistryKeys.ITEM, new Identifier("c", "wood_sticks"));
 }

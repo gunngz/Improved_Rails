@@ -2,6 +2,7 @@ package org.gz.irails.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.data.server.tag.TagProvider;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.RegistryKeys;
@@ -20,20 +21,34 @@ public class IrailsBlockTagProvider extends TagProvider<Block> {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup lookup) {
-        getOrCreateTagBuilder(IrailsTags.POWERED_RAILS)
+        getOrCreateTagBuilder(IrailsTags.ALWAYS_POWERED_RAILS)
+                .addOptional(getBlockId(IrailsBlocks.ALWAYS_POWERED_TURNABLE_RAIL))
+                .addOptional(getBlockId(IrailsBlocks.UNDERWATER_ALWAYS_POWERED_TURNABLE_RAIL))
                 .addOptional(getBlockId(IrailsBlocks.ALWAYS_POWERED_RAIL))
                 .addOptional(getBlockId(IrailsBlocks.POWERED_RAIL_WITH_REDSTONE))
-                .addOptional(getBlockId(IrailsBlocks.UNDERWATER_POWERED_RAIL))
-                .addOptional(getBlockId(IrailsBlocks.UNDERWATER_POWERED_RAIL_WITH_REDSTONE))
                 .addOptional(getBlockId(IrailsBlocks.UNDERWATER_ALWAYS_POWERED_RAIL))
-                .addOptional(getBlockId(IrailsBlocks.LIGHT_POWERED_RAIL))
                 .addOptional(getBlockId(IrailsBlocks.LIGHT_ALWAYS_POWERED_RAIL))
-                .addOptional(getBlockId(IrailsBlocks.LIGHT_UNDERWATER_POWERED_RAIL))
                 .addOptional(getBlockId(IrailsBlocks.LIGHT_UNDERWATER_ALWAYS_POWERED_RAIL))
                 .addOptional(getBlockId(IrailsBlocks.LIGHT_UNDERWATER_POWERED_RAIL_WITH_REDSTONE))
                 .addOptional(getBlockId(IrailsBlocks.LIGHT_POWERED_RAIL_WITH_REDSTONE));
 
+        getOrCreateTagBuilder(IrailsTags.POWERED_TURNABLE_RAILS)
+                .addOptional(getBlockId(IrailsBlocks.POWERED_TURNABLE_RAIL))
+                .addOptional(getBlockId(IrailsBlocks.ALWAYS_POWERED_TURNABLE_RAIL))
+                .addOptional(getBlockId(IrailsBlocks.UNDERWATER_POWERED_TURNABLE_RAIL))
+                .addOptional(getBlockId(IrailsBlocks.UNDERWATER_ALWAYS_POWERED_TURNABLE_RAIL));
+
+        getOrCreateTagBuilder(IrailsTags.POWERED_RAILS)
+                .addTag(IrailsTags.POWERED_TURNABLE_RAILS)
+                .addTag(IrailsTags.ALWAYS_POWERED_RAILS)
+                .addOptional(getBlockId(Blocks.POWERED_RAIL))
+                .addOptional(getBlockId(IrailsBlocks.UNDERWATER_POWERED_RAIL))
+                .addOptional(getBlockId(IrailsBlocks.UNDERWATER_POWERED_RAIL_WITH_REDSTONE))
+                .addOptional(getBlockId(IrailsBlocks.LIGHT_POWERED_RAIL))
+                .addOptional(getBlockId(IrailsBlocks.LIGHT_UNDERWATER_POWERED_RAIL));
+
         getOrCreateTagBuilder(IrailsTags.ACTIVATOR_RAILS)
+                .addOptional(getBlockId(Blocks.ACTIVATOR_RAIL))
                 .addOptional(getBlockId(IrailsBlocks.ACTIVATOR_RAIL_WITH_DETECTOR))
                 .addOptional(getBlockId(IrailsBlocks.UNDERWATER_ACTIVATOR_RAIL_WITH_DETECTOR))
                 .addOptional(getBlockId(IrailsBlocks.UNDERWATER_ACTIVATOR_RAIL));
@@ -48,8 +63,9 @@ public class IrailsBlockTagProvider extends TagProvider<Block> {
                 .addOptional(getBlockId(IrailsBlocks.UNDERWATER_ACTIVATOR_RAIL_WITH_DETECTOR))
                 .addOptional(getBlockId(IrailsBlocks.LIGHT_UNDERWATER_POWERED_RAIL))
                 .addOptional(getBlockId(IrailsBlocks.LIGHT_UNDERWATER_ALWAYS_POWERED_RAIL))
-                .addOptional(getBlockId(IrailsBlocks.LIGHT_UNDERWATER_POWERED_RAIL_WITH_REDSTONE));
-
+                .addOptional(getBlockId(IrailsBlocks.LIGHT_UNDERWATER_POWERED_RAIL_WITH_REDSTONE))
+                .addOptional(getBlockId(IrailsBlocks.UNDERWATER_ALWAYS_POWERED_TURNABLE_RAIL))
+                .addOptional(getBlockId(IrailsBlocks.UNDERWATER_POWERED_TURNABLE_RAIL));
 
         getOrCreateTagBuilder(BlockTags.RAILS)
                 .addTag(IrailsTags.ACTIVATOR_RAILS)

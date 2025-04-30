@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "irails:block/underwater_activator_rail_with_detector"
-  }
-}

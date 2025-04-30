@@ -16,6 +16,9 @@ public class IrailsLangProvider extends FabricLanguageProvider {
         gen.add(IrailsBlocks.POWERED_RAIL_WITH_REDSTONE, "Powered Rail with Redstone");
         gen.add(IrailsBlocks.ACTIVATOR_RAIL_WITH_DETECTOR, "Activator Rail with Detector");
 
+        gen.add(IrailsBlocks.POWERED_TURNABLE_RAIL, "Powered Turnable Rail");
+        gen.add(IrailsBlocks.ALWAYS_POWERED_TURNABLE_RAIL, "Always Powered Turnable Rail");
+
         gen.add(IrailsBlocks.UNDERWATER_RAIL, "Underwater Rail");
         gen.add(IrailsBlocks.UNDERWATER_POWERED_RAIL, "Underwater Powered Rail");
         gen.add(IrailsBlocks.UNDERWATER_ACTIVATOR_RAIL, "Underwater Activator Rail");
@@ -24,10 +27,12 @@ public class IrailsLangProvider extends FabricLanguageProvider {
         gen.add(IrailsBlocks.UNDERWATER_POWERED_RAIL_WITH_REDSTONE, "Underwater Powered Rail with Redstone");
         gen.add(IrailsBlocks.UNDERWATER_ACTIVATOR_RAIL_WITH_DETECTOR, "Underwater Activator Rail with Detector");
 
+        gen.add(IrailsBlocks.UNDERWATER_POWERED_TURNABLE_RAIL, "Underwater Powered Turnable Rail");
+        gen.add(IrailsBlocks.UNDERWATER_ALWAYS_POWERED_TURNABLE_RAIL, "Underwater Always Powered Turnable Rail");
+
         gen.add(IrailsBlocks.LIGHT_POWERED_RAIL, "Light Powered Rail");
         gen.add(IrailsBlocks.LIGHT_ALWAYS_POWERED_RAIL, "Light Always Powered Rail");
         gen.add(IrailsBlocks.LIGHT_POWERED_RAIL_WITH_REDSTONE, "Light Powered Rail with Redstone");
-
         gen.add(IrailsBlocks.LIGHT_UNDERWATER_POWERED_RAIL, "Light Underwater Powered Rail");
         gen.add(IrailsBlocks.LIGHT_UNDERWATER_ALWAYS_POWERED_RAIL, "Light Underwater Always Powered Rail");
         gen.add(IrailsBlocks.LIGHT_UNDERWATER_POWERED_RAIL_WITH_REDSTONE, "Light Underwater Powered Rail with Redstone");

@@ -135,6 +135,9 @@ public class IrailsRecipeProvider extends FabricRecipeProvider {
         offerAddPrismarine(exporter, IrailsItems.POWERED_RAIL_WITH_REDSTONE, IrailsItems.UNDERWATER_POWERED_RAIL_WITH_REDSTONE);
 
         offerAddPrismarine(exporter, IrailsItems.ACTIVATOR_RAIL_WITH_DETECTOR, IrailsItems.UNDERWATER_ACTIVATOR_RAIL_WITH_DETECTOR);
+
+        offerRailsConvertion(exporter, IrailsItems.UNDERWATER_POWERED_TURNABLE_RAIL, IrailsItems.UNDERWATER_POWERED_RAIL);
+        offerRailsConvertion(exporter, IrailsItems.UNDERWATER_ALWAYS_POWERED_TURNABLE_RAIL, IrailsItems.UNDERWATER_ALWAYS_POWERED_RAIL);
     }
 
     private static void offerRegularRails(Consumer<RecipeJsonProvider> exporter) {
@@ -165,6 +168,9 @@ public class IrailsRecipeProvider extends FabricRecipeProvider {
                 .group("rails")
                 .criterion(hasItem(Items.REDSTONE), conditionsFromItem(Items.REDSTONE))
                 .offerTo(exporter, "activator_rail_with_detector");
+
+        offerRailsConvertion(exporter, IrailsItems.POWERED_TURNABLE_RAIL, Items.POWERED_RAIL);
+        offerRailsConvertion(exporter, IrailsItems.ALWAYS_POWERED_TURNABLE_RAIL, IrailsItems.ALWAYS_POWERED_RAIL);
     }
 
     private static void offerAddCoal(Consumer<RecipeJsonProvider> exporter, Item in, Item out) {

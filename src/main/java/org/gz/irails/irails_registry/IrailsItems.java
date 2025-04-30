@@ -21,6 +21,9 @@ public class IrailsItems {
     public static final Item POWERED_RAIL_WITH_REDSTONE = registerBlockItem("powered_rail_with_redstone", BlockItem::new, IrailsBlocks.POWERED_RAIL_WITH_REDSTONE,new Item.Settings());
     public static final Item ACTIVATOR_RAIL_WITH_DETECTOR = registerBlockItem("activator_rail_with_detector", BlockItem::new, IrailsBlocks.ACTIVATOR_RAIL_WITH_DETECTOR, new Item.Settings());
 
+    public static final Item POWERED_TURNABLE_RAIL = registerBlockItem("powered_turnable_rail", BlockItem::new, IrailsBlocks.POWERED_TURNABLE_RAIL, new Item.Settings());
+    public static final Item ALWAYS_POWERED_TURNABLE_RAIL = registerBlockItem("always_powered_turnable_rail", BlockItem::new, IrailsBlocks.ALWAYS_POWERED_TURNABLE_RAIL, new Item.Settings());
+
     public static final Item LIGHT_POWERED_RAIL = registerBlockItem("light_powered_rail", BlockItem::new, IrailsBlocks.LIGHT_POWERED_RAIL, new Item.Settings());
     public static final Item LIGHT_ALWAYS_POWERED_RAIL = registerBlockItem("light_always_powered_rail", BlockItem::new, IrailsBlocks.LIGHT_ALWAYS_POWERED_RAIL, new Item.Settings());
     public static final Item LIGHT_POWERED_RAIL_WITH_REDSTONE = registerBlockItem("light_powered_rail_with_redstone", BlockItem::new, IrailsBlocks.LIGHT_POWERED_RAIL_WITH_REDSTONE, new Item.Settings());
@@ -32,6 +35,9 @@ public class IrailsItems {
     public static final Item UNDERWATER_ACTIVATOR_RAIL = registerBlockItem("underwater_activator_rail", BlockItem::new, IrailsBlocks.UNDERWATER_ACTIVATOR_RAIL, new Item.Settings());
     public static final Item UNDERWATER_POWERED_RAIL_WITH_REDSTONE = registerBlockItem("underwater_powered_rail_with_redstone", BlockItem::new, IrailsBlocks.UNDERWATER_POWERED_RAIL_WITH_REDSTONE, new Item.Settings());
     public static final Item UNDERWATER_ACTIVATOR_RAIL_WITH_DETECTOR = registerBlockItem("underwater_activator_rail_with_detector", BlockItem::new, IrailsBlocks.UNDERWATER_ACTIVATOR_RAIL_WITH_DETECTOR, new Item.Settings());
+
+    public static final Item UNDERWATER_POWERED_TURNABLE_RAIL = registerBlockItem("underwater_powered_turnable_rail", BlockItem::new, IrailsBlocks.UNDERWATER_POWERED_TURNABLE_RAIL, new Item.Settings());
+    public static final Item UNDERWATER_ALWAYS_POWERED_TURNABLE_RAIL = registerBlockItem("underwater_always_powered_turnable_rail", BlockItem::new, IrailsBlocks.UNDERWATER_ALWAYS_POWERED_TURNABLE_RAIL, new Item.Settings());
 
     public static final Item LIGHT_UNDERWATER_POWERED_RAIL = registerBlockItem("light_underwater_powered_rail", BlockItem::new, IrailsBlocks.LIGHT_UNDERWATER_POWERED_RAIL, new Item.Settings());
     public static final Item LIGHT_UNDERWATER_ALWAYS_POWERED_RAIL = registerBlockItem("light_underwater_always_powered_rail", BlockItem::new, IrailsBlocks.LIGHT_UNDERWATER_ALWAYS_POWERED_RAIL, new Item.Settings());
