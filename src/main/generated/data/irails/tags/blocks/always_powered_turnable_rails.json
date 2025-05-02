@@ -1,0 +1,41 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "irails:always_powered_turnable_rail",
+      "required": false
+    },
+    {
+      "id": "irails:underwater_always_powered_turnable_rail",
+      "required": false
+    },
+    {
+      "id": "irails:always_powered_rail",
+      "required": false
+    },
+    {
+      "id": "irails:powered_rail_with_redstone",
+      "required": false
+    },
+    {
+      "id": "irails:underwater_always_powered_rail",
+      "required": false
+    },
+    {
+      "id": "irails:light_always_powered_rail",
+      "required": false
+    },
+    {
+      "id": "irails:light_underwater_always_powered_rail",
+      "required": false
+    },
+    {
+      "id": "irails:light_underwater_powered_rail_with_redstone",
+      "required": false
+    },
+    {
+      "id": "irails:light_powered_rail_with_redstone",
+      "required": false
+    }
+  ]
+}

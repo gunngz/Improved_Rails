@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "rails",
+  "ingredients": [
+    {
+      "item": "minecraft:powered_rail"
+    }
+  ],
+  "result": {
+    "item": "irails:powered_turnable_rail"
+  }
+}

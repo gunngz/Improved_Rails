@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "rails",
+  "ingredients": [
+    {
+      "item": "irails:underwater_powered_rail"
+    }
+  ],
+  "result": {
+    "item": "irails:underwater_powered_turnable_rail"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/rail_flat",
+  "textures": {
+    "rail": "irails:block/underwater_always_powered_turnable_rail_on"
+  }
+}

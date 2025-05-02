@@ -1,0 +1,27 @@
+{
+  "replace": false,
+  "values": [
+    "#irails:powered_turnable_rails",
+    "#irails:always_powered_turnable_rails",
+    {
+      "id": "minecraft:powered_rail",
+      "required": false
+    },
+    {
+      "id": "irails:underwater_powered_rail",
+      "required": false
+    },
+    {
+      "id": "irails:underwater_powered_rail_with_redstone",
+      "required": false
+    },
+    {
+      "id": "irails:light_powered_rail",
+      "required": false
+    },
+    {
+      "id": "irails:light_underwater_powered_rail",
+      "required": false
+    }
+  ]
+}

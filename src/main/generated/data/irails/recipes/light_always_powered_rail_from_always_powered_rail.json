@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "rails",
+  "ingredients": [
+    {
+      "item": "irails:always_powered_rail"
+    },
+    {
+      "tag": "minecraft:coals"
+    }
+  ],
+  "result": {
+    "item": "irails:light_always_powered_rail"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "irails:block/activator_rail_with_detector"
+  }
+}

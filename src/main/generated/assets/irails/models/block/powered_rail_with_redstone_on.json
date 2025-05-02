@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/rail_flat",
+  "textures": {
+    "rail": "irails:block/powered_rail_with_redstone_on"
+  }
+}

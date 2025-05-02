@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "rails",
+  "key": {
+    "I": {
+      "item": "minecraft:gold_ingot"
+    },
+    "K": {
+      "item": "minecraft:redstone"
+    },
+    "P": {
+      "tag": "c:wood_sticks"
+    },
+    "R": {
+      "item": "minecraft:prismarine_shard"
+    }
+  },
+  "pattern": [
+    "IRI",
+    "IPI",
+    "IKI"
+  ],
+  "result": {
+    "count": 6,
+    "item": "irails:underwater_powered_rail"
+  },
+  "show_notification": true
+}

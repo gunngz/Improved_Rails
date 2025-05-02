@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_rail_raised_sw",
+  "textures": {
+    "rail": "irails:block/always_powered_rail_on"
+  }
+}

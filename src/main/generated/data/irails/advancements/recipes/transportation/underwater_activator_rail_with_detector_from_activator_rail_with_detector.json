@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_activator_rail_with_detector": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "irails:activator_rail_with_detector"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:underwater_activator_rail_with_detector_from_activator_rail_with_detector"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_activator_rail_with_detector",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:underwater_activator_rail_with_detector_from_activator_rail_with_detector"
+    ]
+  },
+  "sends_telemetry_event": false
+}

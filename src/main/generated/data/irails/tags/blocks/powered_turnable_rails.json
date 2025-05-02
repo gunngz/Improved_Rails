@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "irails:powered_turnable_rail",
+      "required": false
+    },
+    {
+      "id": "irails:always_powered_turnable_rail",
+      "required": false
+    },
+    {
+      "id": "irails:underwater_powered_turnable_rail",
+      "required": false
+    },
+    {
+      "id": "irails:underwater_always_powered_turnable_rail",
+      "required": false
+    }
+  ]
+}
